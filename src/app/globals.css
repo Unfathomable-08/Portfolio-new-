@@ -1,11 +1,77 @@
 @import "tailwindcss";
 
 :root {
-  --bg-dark : #000;
+  --primary: #121212;
+  --secondary: #00c2ff;
+  --tertiary: #B5B5B5;
+  --hover: #00a2da;
 }
 
 * {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  color: white;
+}
+
+.gear-1 {
+  animation: gear1 15s infinite linear;
+}
+
+.gear-2 {
+  animation: gear2 10s infinite linear;
+}
+
+.bg-services {
+  background: linear-gradient(black, var(--secondary));
+}
+
+.navbar-item > div {
+  width: 0%;
+  height: 2.9px;
+  border-radius: 2px;
+  background: var(--secondary);
+  @apply w-0 h-[2.9px] rounded-[2px] bg-[var(--secondary)];
+}
+
+.navbar-item:hover > div {
+  animation: navbar-item 500ms ease-in-out;
+  width: 100%;
+}
+
+@keyframes gear1 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  33% {
+    transform: rotate(0deg);
+  }
+  66% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes gear2 {
+  0% {
+    transform: rotate(-180deg);
+  }
+  33% {
+    transform: rotate(0deg);
+  }
+  66% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes navbar-item {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
