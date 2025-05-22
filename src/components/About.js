@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div className="h-screen bg-[var(--primary)] grid grid-cols-[1fr_1fr] items-center" style={{padding: "80px"}}>
         <div>
-            <h4 className="font-medium text-xl"style={{padding: "0 0 10px 0"}}>
+            <h4 className="font-medium text-xl pb-3">
                 Hi, I’m Muhammad,
             </h4>
             <p>
@@ -17,7 +17,7 @@ export default function About() {
                 fascinated by physics and mathematics—fields that challenge my problem-solving skills and inspire my work in development. If you’re looking
                 for someone who loves to solve complex problems, I’d love to collaborate on your next project!
             </p>
-            <button className="bg-[var(--secondary)] hover:bg-[var(--hover)] rounded" style={{padding: '3px 12px', margin: '35px 10px'}}>Connect Now</button>
+            <button className="bg-[var(--secondary)] hover:bg-[var(--hover)] rounded p-btn m-btn">Connect Now</button>
         </div>
 
         <div className="flex justify-center transform translate-x-4 -translate-y-12 gap-x-6">

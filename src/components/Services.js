@@ -1,6 +1,6 @@
 export default function Services() {
   return (
-    <div className="bg-[var(--primary)] h-screen items-center flex" style={{padding: "0px 80px"}}>
+    <div className="bg-[var(--primary)] h-screen items-center flex px-20">
         <div className="grid grid-cols-[3fr_2fr] gap-x-16 items-center">
 
             <div className="grid grid-cols-2 gap-8">

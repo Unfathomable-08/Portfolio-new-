@@ -1,9 +1,9 @@
 export default function Contact() {
     return (
-        <div id="contact" className="min-h-screen bg-[var(--primary)] grid grid-cols-1 md:grid-cols-2 items-center gap-x-8 text-white" style={{padding: '0 80px'}}>
+        <div id="contact" className="min-h-screen bg-[var(--primary)] grid grid-cols-1 md:grid-cols-2 items-center gap-x-8 text-white px-20">
         <div className="px-6 sm:px-20">
-            <h1 className="text-center text-2xl md:mt-24 font-medium">Contact <span className=" text-[var(--secondary)]">Me</span></h1>
-            <h2 className="pb-3 pt-6 font-medium text-sm"  style={{padding: '12px 0 12px 0'}}>Let's Work Together</h2>
+            <h1 className="pb-3 text-center text-2xl md:mt-24 font-medium">Contact <span className=" text-[var(--secondary)]">Me</span></h1>
+            <h2 className="pb-3 pt-6 font-medium text-sm">Let's Work Together</h2>
             <p className="text-sm">Feel free to reach out if you have any question, opportunities, or just want to connect. Whether it's a potential project, feedback, or a collaboration idea, I'd love to hear from you and discuss how we can work together.</p>
             <i className="fa fa-envelope text-[var(--secondary)] text-xl transform translate-y-[3px] pt-8"/><a href="mailto:muhammad124711@gmail.com" className="ps-2 underline">muhammad124711@gmail.com</a><br/>
             <i className="fab fa-github text-[var(--secondary)] text-xl transform translate-y-[3px]"/><a href="https://github.com/unfathomable-08" target="_blank" className="ps-2 underline">@Unfathomable-08</a><br/>

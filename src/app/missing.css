@@ -1,0 +1,19 @@
+.px-20 {
+    padding: 0 80px;
+}
+
+.p-20 {
+    padding: 80px;
+}
+
+.pb-3 {
+    padding: 0 0 12px 0;
+}
+
+.p-btn {
+    padding: 3px 12px;
+}
+
+.m-btn {
+    margin: 35px 10px;
+}
