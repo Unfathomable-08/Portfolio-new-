@@ -25,3 +25,7 @@
 .p-4 {
     padding: 16px;
 }
+
+.text-black {
+    color: black !important;
+}
