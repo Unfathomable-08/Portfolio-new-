@@ -26,6 +26,10 @@
     padding: 16px;
 }
 
+.px-2 {
+    padding: 4px 8px;
+}
+
 .text-black {
     color: black !important;
 }

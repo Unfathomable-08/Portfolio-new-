@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const logos = [
   { src: "/html.png", name: "HTML" },
@@ -28,43 +28,54 @@ const logos = [
 
 export default function Skills() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [animationKey, setAnimationKey] = useState(0);
+
+  // Reset animation every 38 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimationKey((prev) => prev + 1);
+    }, 38000); // 38 seconds
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
 
   return (
     <div
-      className="min-h-screen bg-[var(--primary)] text-white flex flex-col items-center justify-center gap-y-8"
-      style={{ paddingLeft: 80, paddingRight: 80 }}
+      className="min-h-screen bg-[var(--primary)] text-white flex flex-col items-center justify-center gap-y-8 px-4 sm:px-20"
     >
       {[0, 6, 13].map((start, rowIndex) => (
-        <div className="flex gap-x-6" key={rowIndex} style={{ position: "relative" }}>
+        <div className="flex gap-x-6 relative" key={rowIndex}>
           {logos.slice(start, start + (rowIndex === 1 ? 7 : 6)).map(({ src, name }, idx) => {
             const globalIndex = start + idx;
             const isHovered = hoveredIndex === globalIndex;
             return (
-              <div key={globalIndex} style={{ position: "relative" }}>
+              <div key={globalIndex} className="relative">
                 <motion.div
+                  key={`${globalIndex}-${animationKey}`} // Unique key to trigger animation restart
                   className="bg-white w-12 h-12 rounded-full flex justify-center items-center overflow-hidden cursor-pointer"
                   animate={{
                     y: [0, -15, 0],
-                    transition: {
-                      duration: 2,
-                      ease: "easeInOut",
-                      delay: globalIndex * 2,
-                    },
+                  }}
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut",
+                    delay: globalIndex * 2, // Reduced delay for smoother stagger
                   }}
                   onMouseEnter={() => setHoveredIndex(globalIndex)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <Image src={src} width={name !== "Node.js" && name !== "Pytorch" ? 40 : 30} height={name !== "Node.js" && name !== "Pytorch" ? 40 : 30} alt={name} />
+                  <Image
+                    src={src}
+                    width={name !== "Node.js" && name !== "Pytorch" ? 40 : 30}
+                    height={name !== "Node.js" && name !== "Pytorch" ? 40 : 30}
+                    alt={name}
+                  />
                 </motion.div>
 
                 {isHovered && (
                   <div
-                    style={{
-                      padding: "4px 8px",
-                      whiteSpace: "nowrap",
-                      pointerEvents: "none"
-                    }}
-                    className="absolute text-black bottom-[100%] left-[50%] transform translate-[-50%] text-[12px] z-10 rounded-[4px] bg-[var(--tertiary)]"
+                    className="absolute text-black bottom-[calc(100%+4px)] left-1/2 -translate-x-1/2 text-[12px] z-10 rounded-[4px] bg-[var(--tertiary)] px-2 whitespace-nowrap pointer-events-none"
+                    role="tooltip"
+                    aria-label={name}
                   >
                     {name}
                   </div>
