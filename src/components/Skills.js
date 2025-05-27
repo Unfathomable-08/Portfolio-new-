@@ -51,9 +51,9 @@ export default function Skills() {
               <div key={globalIndex} className="relative">
                 <motion.div
                   key={`${globalIndex}-${animationKey}`} // Unique key to trigger animation restart
-                  className="bg-white w-12 h-12 rounded-full flex justify-center items-center overflow-hidden cursor-pointer"
+                  className="bg-skills w-12 h-20 flex justify-center items-center overflow-hidden cursor-pointer"
                   animate={{
-                    y: [0, -15, 0],
+                    y: [0, -0, 0],
                   }}
                   transition={{
                     duration: 2,
@@ -63,12 +63,14 @@ export default function Skills() {
                   onMouseEnter={() => setHoveredIndex(globalIndex)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <Image
-                    src={src}
-                    width={name !== "Node.js" && name !== "Pytorch" ? 40 : 30}
-                    height={name !== "Node.js" && name !== "Pytorch" ? 40 : 30}
-                    alt={name}
-                  />
+                  <div className="h-18 w-10 flex justify-between items-center">
+                      <Image
+                        src={src}
+                        width={name !== "Node.js" && name !== "Pytorch" ? 40 : 30}
+                        height={name !== "Node.js" && name !== "Pytorch" ? 40 : 30}
+                        alt={name}
+                        />
+                  </div>
                 </motion.div>
 
                 {isHovered && (

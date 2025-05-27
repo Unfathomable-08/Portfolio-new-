@@ -1,33 +1,37 @@
 .px-20 {
-    padding: 0 80px;
+    padding: 0 80px !important;
 }
 
 .p-20 {
-    padding: 80px;
+    padding: 80px !important;
 }
 
 .pb-3 {
-    padding: 0 0 12px 0;
+    padding: 0 0 12px 0 !important;
 }
 
 .mb-3 {
-    margin: 0 0 12px 0;
+    margin: 0 0 12px 0 !important;
 }
 
 .p-btn {
-    padding: 3px 12px;
+    padding: 3px 12px !important;
 }
 
 .m-btn {
-    margin: 35px 10px;
+    margin: 35px 10px !important;
+}
+
+.m-btn-sm {
+    margin: 25px 5px !important;
 }
 
 .p-4 {
-    padding: 16px;
+    padding: 16px !important;
 }
 
 .px-2 {
-    padding: 4px 8px;
+    padding: 4px 8px !important;
 }
 
 .text-black {

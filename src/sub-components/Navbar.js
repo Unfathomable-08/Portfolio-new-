@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
     <div className="bg-[var(--primary)] fixed w-full z-10">
-      <div className="border-b-1 border-[var(--tertiary)] w-full rounded-2xl h-16 flex items-center justify-between" style={{padding: "0 70px"}}>
+      <div className="border-b-1 border-[var(--tertiary)] w-full rounded-2xl h-16 flex items-center justify-between px-20">
         <h1 className="font-bold text-xl">Portfolio.</h1>
         <div>
             <ul className="flex gap-x-6">

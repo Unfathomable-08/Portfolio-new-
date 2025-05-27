@@ -4,7 +4,7 @@ import Gear from "../sub-components/Gear.js"
 export default function About() {
     
   return (
-    <div className="h-screen bg-[var(--primary)] grid grid-cols-[1fr_1fr] items-center" style={{padding: "80px"}}>
+    <div className="h-screen bg-[var(--primary)] grid grid-cols-[1fr_1fr] items-center p-20">
         <div>
             <h4 className="font-medium text-xl pb-3">
                 Hi, I’m Muhammad,
