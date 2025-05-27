@@ -67,10 +67,10 @@ export default function Skills() {
                       <Image
                         src={src}
                         width={
-                          name !== "Node.js" && name !== "Pytorch" ? 48 : 30
+                          name !== "Node.js" && name !== "Pytorch" ? 48 : 32
                         }
                         height={
-                          name !== "Node.js" && name !== "Pytorch" ? 48 : 30
+                          name !== "Node.js" && name !== "Pytorch" ? 48 : 32
                         }
                         alt={name}
                       />
