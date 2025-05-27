@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const logos = [
   { src: "/html.png", name: "HTML" },
   { src: "/css.png", name: "CSS" },
-  { src: "/javascript.jpg", name: "JavaScript" },
+  { src: "/javascript.png", name: "JavaScript" },
   { src: "/bootstrap.png", name: "Bootstrap" },
   { src: "/tailwind.png", name: "Tailwind CSS" },
   { src: "/react.png", name: "React" },
