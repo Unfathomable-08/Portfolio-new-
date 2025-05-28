@@ -49,21 +49,13 @@ export default function Skills() {
               const isHovered = hoveredIndex === globalIndex;
               return (
                 <div key={globalIndex} className="relative">
-                  <motion.div
+                  <div
                     key={`${globalIndex}-${animationKey}`} // Unique key to trigger animation restart
-                    className="bg-skills w-16 h-20 rounded-lg flex justify-center items-center overflow-hidden cursor-pointer"
-                    animate={{
-                      y: [0, -0, 0],
-                    }}
-                    transition={{
-                      duration: 2,
-                      ease: "easeInOut",
-                      delay: globalIndex * 2, // Reduced delay for smoother stagger
-                    }}
+                    className="bg-skills w-18 h-24 rounded-lg flex justify-center items-center overflow-hidden cursor-pointer"
                     onMouseEnter={() => setHoveredIndex(globalIndex)}
                     onMouseLeave={() => setHoveredIndex(null)}
                   >
-                    <div className="h-19 w-15 flex rounded justify-center items-center bg-[var(--primary)]">
+                    <div className="h-23 w-17 flex rounded justify-center items-center bg-[var(--primary)]">
                       <Image
                         src={src}
                         width={
@@ -75,11 +67,11 @@ export default function Skills() {
                         alt={name}
                       />
                     </div>
-                  </motion.div>
+                  </div>
 
                   {isHovered && (
                     <div
-                      className="absolute text-black bottom-[calc(100%+4px)] left-1/2 -translate-x-1/2 text-[12px] z-10 rounded-[4px] bg-[var(--tertiary)] px-2 whitespace-nowrap pointer-events-none"
+                      className="absolute top-[2px] left-[2px] h-23 w-17 rounded flex justify-center items-end bg-skills-hover z-10 whitespace-nowrap pointer-events-none"
                       role="tooltip"
                       aria-label={name}
                     >

@@ -3,7 +3,7 @@
 :root {
   --primary: #121212;
   --secondary: #00c2ff;
-  --tertiary: #B5B5B5;
+  --tertiary: #b5b5b5;
   --hover: #00a2da;
 }
 
@@ -57,7 +57,11 @@
 }
 
 .bg-skills {
-  background: linear-gradient(#007aff, var(--secondary));
+  background: linear-gradient(145deg, #007aff, var(--secondary));
+}
+
+.bg-skills-hover {
+  background: linear-gradient(transparent, var(--secondary));
 }
 
 @keyframes gear1 {
