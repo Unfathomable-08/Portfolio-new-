@@ -64,6 +64,11 @@
   background: linear-gradient(transparent, var(--secondary));
 }
 
+.bg-dots {
+  background-image: radial-gradient(rgba(255 255 255 / 0.2) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
 @keyframes gear1 {
   0% {
     transform: rotate(-180deg);

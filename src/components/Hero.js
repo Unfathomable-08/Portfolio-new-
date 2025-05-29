@@ -29,7 +29,7 @@ export default function Hero() {
             alt=""
             className="absolute w-8 h-8 opacity-30"
             initial={{ y: -20, x: 0 }}
-            animate={{ y: [0, 10, 0], x: [0, -10, 0] }}
+            animate={{ y: [0, 20, 0], x: [0, -20, 0] }}
             transition={{ duration: item.duration, repeat: Infinity }}
             style={{ top: item.top, left: item.left }}
           />
@@ -37,7 +37,7 @@ export default function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center text-white max-w-4xl space-y-6 px-4">
+      <div className="relative z-5 text-center text-white max-w-4xl space-y-6 px-4">
         <motion.h1
           className="text-4xl sm:text-5xl font-extrabold leading-tight pb-3 drop-shadow-[0_0_10px_var(--secondary)]"
           initial={{ opacity: 0, y: -50 }}
@@ -84,12 +84,12 @@ export default function Hero() {
       </div>
 
       {/* Gradient Overlays */}
-      <div className="absolute bg-gradient-to-b from-transparent to-[var(--primary)] h-36 bottom-0 w-full z-0" />
-      <div className="absolute bg-gradient-to-b from-[var(--primary)] to-transparent h-36 top-0 w-full z-0" />
+      <div className="absolute bg-gradient-to-b from-transparent to-[var(--primary)] h-36 bottom-0 w-full z-5" />
+      <div className="absolute bg-gradient-to-b from-[var(--primary)] to-transparent h-36 top-0 w-full z-5" />
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-18 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
+        className="absolute bottom-18 left-1/2 transform -translate-x-1/2 cursor-pointer z-10"
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
       >

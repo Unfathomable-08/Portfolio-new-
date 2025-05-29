@@ -28,20 +28,15 @@ const logos = [
 
 export default function Skills() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [animationKey, setAnimationKey] = useState(0);
-
-  // Reset animation every 38 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAnimationKey((prev) => prev + 1);
-    }, 38000); // 38 seconds
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
 
   return (
-    <div className="min-h-screen bg-[var(--primary)] text-white flex flex-col items-center justify-center gap-y-8 px-4 sm:px-20">
+    <div className="min-h-screen bg-[var(--primary)] text-white flex flex-col items-center justify-center gap-y-8 px-4 sm:px-20 relative bg-dots">
+        {/* Soft blurred circles */}
+        <div className="absolute top-10 left-10 w-40 h-40 rounded-full bg-white opacity-40 blur-3xl pointer-events-none z-15"></div>
+        <div className="absolute bottom-20 right-20 w-56 h-56 rounded-full bg-[#ffffffaa] opacity-40 blur-3xl pointer-events-none z-15"></div>
+
       {[0, 6, 13].map((start, rowIndex) => (
-        <div className="flex gap-x-6 relative" key={rowIndex}>
+        <div className="flex gap-x-6 relative " key={rowIndex}>
           {logos
             .slice(start, start + (rowIndex === 1 ? 7 : 6))
             .map(({ src, name }, idx) => {
@@ -50,7 +45,6 @@ export default function Skills() {
               return (
                 <div key={globalIndex} className="relative">
                   <div
-                    key={`${globalIndex}-${animationKey}`} // Unique key to trigger animation restart
                     className="bg-skills w-18 h-24 rounded-lg flex justify-center items-center overflow-hidden cursor-pointer"
                     onMouseEnter={() => setHoveredIndex(globalIndex)}
                     onMouseLeave={() => setHoveredIndex(null)}
