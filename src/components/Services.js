@@ -29,7 +29,7 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-services h-44 rounded-lg flex flex-col justify-center items-center text-center p-4"
+              className="bg-services h-56 rounded-lg flex flex-col justify-center items-center text-center p-4"
             >
               <h1 className="font-medium pb-3">{service.title}</h1>
               <p className="text-sm">{service.description}</p>
