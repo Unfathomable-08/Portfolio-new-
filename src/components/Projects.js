@@ -1,9 +1,18 @@
-import Gear from "../sub-components/Gear.js"
+"use client"
 
-export default function Projects() {
+import { motion } from "framer-motion";
+
+const projects = [
+  {
+    title: '',
+    desc: '',
+    tech: '',
+    img: ''
+  }
+]
+
+export default function Projects(){
   return (
-    <div className="bg-[var(--primary)] min-h-screen">
-        <Gear />
-    </div>
-  );
+    <div className="min-h-screen bg-[var(--primary)] grid grid-cols-3"></div>
+  )
 }
