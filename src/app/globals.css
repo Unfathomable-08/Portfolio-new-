@@ -13,16 +13,14 @@
   color: white;
 }
 
-.gear-1 {
-  animation: gear1 15s infinite linear;
-}
-
-.gear-2 {
-  animation: gear2 10s infinite linear;
-}
-
 .bg-services {
-  background: linear-gradient(black, var(--secondary));
+  background: linear-gradient(
+    to bottom,
+    black 0%,
+    #121212 30%,
+    #003b4d 60%,
+    var(--secondary) 100%
+  );
 }
 
 .navbar-item > div {
@@ -67,35 +65,6 @@
 .bg-dots {
   background-image: radial-gradient(rgba(255 255 255 / 0.2) 1px, transparent 1px);
   background-size: 30px 30px;
-}
-
-@keyframes gear1 {
-  0% {
-    transform: rotate(-180deg);
-  }
-  33% {
-    transform: rotate(0deg);
-  }
-  66% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-@keyframes gear2 {
-  0% {
-    transform: rotate(-180deg);
-  }
-  33% {
-    transform: rotate(0deg);
-  }
-  66% {
-    transform: rotate(180deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
 }
 
 @keyframes navbar-item {

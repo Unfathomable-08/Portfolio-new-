@@ -1,10 +1,22 @@
 "use client"
 import Gear from "../sub-components/Gear.js"
-
+import DotsBg from "../sub-components/Dots-bg.js"
+import { motion, useCycle  } from "framer-motion"
+import { useEffect } from "react";
+ 
 export default function About() {
+    const [direction, cycleDirection] = useCycle(1, -1); // 1 for clockwise, -1 for counter-clockwise
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      cycleDirection(); // Flip direction every 188s
+    }, 18000); // Match the duration
+
+    return () => clearInterval(interval);
+  }, [cycleDirection])
     
   return (
-    <div className="min-h-screen bg-[var(--primary)] grid grid-cols-[1fr_1fr] items-center px-20">
+    <div className="min-h-screen bg-[var(--primary)] grid grid-cols-[1fr_1fr] items-center px-20 relative">
         <div>
             <h4 className="font-medium text-xl pb-3">
                 Hi, I’m Muhammad,
@@ -21,13 +33,24 @@ export default function About() {
         </div>
 
         <div className="flex justify-center transform translate-x-4 -translate-y-12 gap-x-6">
-            <div className="transform rotate-6 scale-90 gear-1 w-auto h-38">
-                <Gear hover=""/>
-            </div>
-            <div className="transform rotate-36 scale-75 translate-y-22 gear-2 h-38 w-auto">
-                <Gear/>
-            </div>
+            <motion.div 
+                initial={{ rotate: 0 }} 
+                animate={{ rotate: -360 * direction }}
+                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                >
+                <Gear />
+            </motion.div>
+
+            <motion.div 
+                initial={{ rotate: 0 }} 
+                animate={{ rotate: 360 * direction }}
+                transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+                className="transform rotate-36 scale-75 translate-y-22 gear-2 h-38 w-auto"
+            >
+                <Gear />
+            </motion.div>
         </div>
+        <DotsBg />
     </div>
   );
 }

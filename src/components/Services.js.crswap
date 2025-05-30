@@ -35,12 +35,10 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-services h-56 rounded-lg flex flex-col justify-center gap-y-2 items-center text-center p-4"
+              className="bg-services h-56 rounded-lg flex flex-col justify-center items-center text-center p-4"
             >
-              <div className="w-10 h-10 border-1 rounded-full flex justify-center items-center">
-                <Image src={service.img} width={30} height={30} alt={service.title}/>
-              </div>
-              <h1 className="font-medium">{service.title}</h1>
+              <Image src={service.img} width={30} height={20} alt={service.title}/>
+              <h1 className="font-medium pb-3">{service.title}</h1>
               <p className="text-sm">{service.description}</p>
               <div>
                 <button className="bg-black hover:bg-[var(--hover)] rounded text-sm p-btn m-btn-sm">
