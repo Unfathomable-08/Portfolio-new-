@@ -28,6 +28,9 @@
 .px-2 {
     padding: 4px 8px !important;
 }
+.py-15 {
+    padding: 60px 0 !important;
+}
 .text-black {
     color: black !important;
 }
